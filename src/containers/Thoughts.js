@@ -23,7 +23,7 @@ export default Thoughts
 //             <div>
 //                 {/* We take in our props from App which is an array of strings.
 //                     We map through them and return a paragraph tag with the string */}
-//                 {props.ourThoughts.map(thought => <p>{ thought }</p>)}
+//                 {props.ourThoughts.map(thought => <Thought thought={thought} />)}
 //             </div>
 //         )
 // }
