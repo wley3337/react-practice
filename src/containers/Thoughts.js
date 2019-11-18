@@ -6,7 +6,9 @@ class Thoughts extends React.Component {
     render(){
         return(
             <div>
-                Thoughts component
+                {/* We take in our props from App which is an array of strings.
+                    We map through them and return a paragraph tag with the string */}
+                {this.props.ourThoughts.map(thought => <p>{ thought }</p>)}
             </div>
         )
     };
@@ -14,12 +16,14 @@ class Thoughts extends React.Component {
 
 export default Thoughts
 
-// Functional component
-// const Thoughts = () =>{
-//     return(
-//         <div>
-//             Thoughts component
-//         </div>
-//     )
+// // Functional component
+// const Thoughts = (props) =>{
+//         return(
+//             <div>
+//                 {/* We take in our props from App which is an array of strings.
+//                     We map through them and return a paragraph tag with the string */}
+//                 {props.ourThoughts.map(thought => <p>{ thought }</p>)}
+//             </div>
+//         )
 // }
 // export default Thoughts
