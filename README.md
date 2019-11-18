@@ -1,68 +1,67 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Practic passing props
 
-## Available Scripts
 
-In the project directory, you can run:
+## Description
 
-### `yarn start`
+In this project we'll practice passing props from one sibliing component to anther through callbacks. 
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### Structures
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+Please note that this style of organization is what `I` find to be best for me. Please feel free to modify as desired, but the solution branches will follow this structure. Also, the word `component` is most often referencing a `React Component` vs the idea of a component folder. I've tried to keep things consistant and use the phrase `component` only when refering to something that should go in the component folder.
 
-### `yarn test`
+* `/containers/` will hold all of wrapper components. This can be thought of as anything that you would attach an 's', like thoughts, things, or anthing that represents a container where we might iterate over something using `map`. These React Components also contain our controller type logic if you're using something like React-Router. 
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+* `/components/` will hold all of our end components. These have no or minor children and are used primarily to display data. 
+  * note that we will start by having our `thoughts` container do some displaying to start but will eventually pass that information down to a single component called `thought` in stage 2. 
+  
+  
+### Goal
 
-### `yarn build`
+* Create an app that allows a user to write their thoughts in an input field and add them to our app. `Tempus fuget` and our app will not persist on refresh. You may find this a little anoying when testing testing passing props from component to component so feel free to add some initial state. 
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+This is what the structure will look like: 
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+![React Practice Example](./public/react-practice-structure.png)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `yarn eject`
+### Instructions
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+* Clone the repo
+* `yarn install` or `npm install`
+* Open the project in what ever code editor you would like
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+#### Stage One
+* Open the `src/components/ThoughtInput.js` 
+    * set up this as a functional or class component  
+    * feel free to use hooks for local state or you can have a state object 
+    * ?'s 
+      - How do you connect this to our main App container?
+      - How do we 'save' the information and where do we save it to? 
+* Create `src/containers/Thoughts.js`
+    * set up this as a React Class Component if you used a functional ThoughtInput or as a functional React Component if you used a class component in ThoughtInput 
+    * feel free to use hooks for local state or you can have a state object if you need it. 
+    * ?'s 
+      - How do you connect this to our main App container?
+      - Do we need to save any information coming from this container?
+      
+#### Stage Two
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+* Create `src/components/Thought.js`
+  * this should be a functional React Component 
+  * ?'s 
+      - How do you connect this to our Thoughts container?
+      - What does this need in order to dislay successfully? 
+      
+#### Stretch 
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+* Be able to delete a thought by clicking on the displayed thought or buttong inside of the thought. 
+  
 
-## Learn More
+### Branches 
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+* main - no solution just setup structure and readme
+* scaffold - has the first two components setup without props passed or connected to the `App` container
+* solution-stage-1 - completes first stage with input form results display in a sibliing component/container 
+* solution-stage-2 - completes second stage with each of our thoughts being sent to a thought component for rendoring
+* solution-stretch - completes stretch feature
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
