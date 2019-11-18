@@ -19,6 +19,8 @@ Please note that this style of organization is what `I` find to be best for me. 
 
 * Create an app that allows a user to write their thoughts in an input field and add them to our app. `Tempus fuget` and our app will not persist on refresh. You may find this a little annoying when testing testing passing props from component to component so feel free to add some initial state. 
 
+* You might find the docs on [Hooks](https://reactjs.org/docs/hooks-reference.html#usestate) helpful. 
+
 This is what the structure will look like: 
 
 ![React Practice Example](./public/react-practice-structure.png)
