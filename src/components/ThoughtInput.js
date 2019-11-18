@@ -1,3 +1,26 @@
-//create either a functional or class component here:
+import React, { useState } from 'react'
 
-// It should have a form with one input field that a user can enter in a thought. 
+// Functional Component
+const ThoughtInput = () => {
+    return (
+            <div>
+                I like to setup a div with some text just to make sure that a component is connected properly 
+                ThoughtInput 
+            </div>
+    )
+};
+
+export default ThoughtInput
+
+
+// Class Component
+
+// class ThoughtInput extends React.Component{
+//     render(){
+//         return (
+//             <div>
+//                 ThoughtInput 
+//             </div>
+//         )
+//     }
+// }
